@@ -1,23 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   z_lstdelone.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 19:57:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/11 20:42:13 by ztaskula         ###   ########.fr       */
+/*   Created: 2025/09/11 19:44:33 by ztaskula          #+#    #+#             */
+/*   Updated: 2025/09/11 19:45:18 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-#include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "z_list/z_list.h"
-
-
-
-
-#endif
+#include "z_list.h"

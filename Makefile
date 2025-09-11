@@ -1,11 +1,10 @@
 NAME = push_swap
 
-SRCS = push_swap.c \
-	z_push_functions.c z_reverse_functions.c z_rotate_functions.c z_swap_functions.c
+SRCS = push_swap.c 
 
 OBJS = $(SRCS:.c=.o)
 
-LIBS = libft/libft.a ft_printf/libftprintf.a
+LIBS = libft/libft.a ft_printf/libftprintf.a z_list/z_list.a
 
 
 all : $(LIBS) $(NAME)
@@ -16,16 +15,19 @@ $(NAME): $(OBJS)
 $(LIBS):
 	$(MAKE) -C libft bonus
 	$(MAKE) -C ft_printf
+	$(MAKE) -C z_list
 
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C libft clean
 	$(MAKE) -C ft_printf clean
+	$(MAKE) -C z_list clean
 
 fclean: clean
 	rm -f $(NAME)
 	$(MAKE) -C libft fclean
 	$(MAKE) -C ft_printf fclean
+	$(MAKE) -C z_list fclean
 
 re: fclean all
 
