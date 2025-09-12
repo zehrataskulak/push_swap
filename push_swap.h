@@ -6,7 +6,7 @@
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 19:57:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/11 20:42:13 by ztaskula         ###   ########.fr       */
+/*   Updated: 2025/09/12 13:57:26 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
-#include "z_list/z_list.h"
+#include "t_zlist/t_zlist.h"
 
 
-
+void	read_arguments(int argc, char **argv, t_zlist **stack_a);
 
 #endif

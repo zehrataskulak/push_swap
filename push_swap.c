@@ -6,7 +6,7 @@
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 20:12:30 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/11 21:20:30 by ztaskula         ###   ########.fr       */
+/*   Updated: 2025/09/12 14:05:05 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,18 @@ int main(int argc, char **argv)
 {
 	int i = argc - 1;
 	int *cont;
-	z_list	*tmp;
-	z_list	*node = NULL;
+	//t_zlist	*tmp;
+	t_zlist	*node = NULL;
 	
-	while (i > 0)
+	/*while (i > 0)
 	{
 		cont = malloc(sizeof(int));
 		*cont = ft_atoi(argv[i--]);
-		tmp = z_lstnew(cont);
-		z_lstadd_front(&node, tmp);
-	}
+		tmp = t_zlstnew(cont);
+		t_zlstadd_front(&node, tmp);
+	}*/
+
+	read_arguments(argc, argv, &node);
 	
 	while(node -> next)
 	{

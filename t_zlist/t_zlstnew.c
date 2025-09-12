@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   z_list.h                                           :+:      :+:    :+:   */
+/*   t_zlstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 19:31:08 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/11 20:54:18 by ztaskula         ###   ########.fr       */
+/*   Created: 2025/09/11 19:44:38 by ztaskula          #+#    #+#             */
+/*   Updated: 2025/09/12 12:55:50 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef Z_LIST_H
-#define Z_LIST_H
+#include "t_zlist.h"
 
-#include <stdlib.h>
-
-
-typedef struct l_list
+t_zlist	*t_zlstnew(void *content)
 {
-	void			*content;
-	struct l_list	*next;
-	struct l_list	*prev;
-}	z_list;
+	t_zlist	*newnode;
 
-
-z_list	*z_lstnew(void *content);
-void	z_lstadd_front(z_list **lst, z_list *new);
-
-
-
-#endif
+	newnode = malloc(sizeof(t_zlist));
+	if(newnode == NULL)
+		return (NULL);
+	newnode -> content = content;
+	newnode -> next = NULL;
+	newnode -> prev = NULL;
+	return (newnode);
+}

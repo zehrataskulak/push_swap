@@ -1,6 +1,6 @@
-NAME = z_list.a
+NAME = t_zlist.a
 
-SRCS = z_lstnew.c z_lstadd_front.c
+SRCS = t_zlstnew.c t_zlstadd_front.c
 
 OBJS = $(SRCS:.c=.o)
 

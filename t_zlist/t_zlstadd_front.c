@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   z_lstadd_front.c                                   :+:      :+:    :+:   */
+/*   t_zlstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 19:44:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/11 21:10:53 by ztaskula         ###   ########.fr       */
+/*   Updated: 2025/09/12 12:56:03 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "z_list.h"
+#include "t_zlist.h"
 
-void	z_lstadd_front(z_list **lst, z_list *new)
+void	t_zlstadd_front(t_zlist **lst, t_zlist *new)
 {
 	if (lst == NULL || new == NULL)
 		return ;
