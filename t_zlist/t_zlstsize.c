@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_zlstclear.c                                      :+:      :+:    :+:   */
+/*   t_zlstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 19:44:29 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/13 18:46:52 by ztaskula         ###   ########.fr       */
+/*   Created: 2025/09/13 15:42:12 by ztaskula          #+#    #+#             */
+/*   Updated: 2025/09/13 17:54:14 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "t_zlist.h"
 
-void	t_zlstclear(t_zlist **lst, void (*del)(void *))
+int	t_zlstsize(t_zlist *lst)
 {
-	int	a;
+	int	size;
 	t_zlist	*mv;
 
-	if (!lst || !del)
-		return ;
-	while(*lst)
+	size = 0;
+	mv = lst;
+	while(mv)
 	{
-		mv = (*lst)->next;
-		t_zlstdelone(*lst, del);
-		*lst = mv;
+		size++;
+		mv = mv->next;
 	}
+	return(size);
 }

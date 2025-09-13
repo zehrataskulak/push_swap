@@ -6,7 +6,7 @@
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 20:12:30 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/12 14:05:05 by ztaskula         ###   ########.fr       */
+/*   Updated: 2025/09/13 18:50:44 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main(int argc, char **argv)
 	int i = argc - 1;
 	int *cont;
 	//t_zlist	*tmp;
-	t_zlist	*node = NULL;
+	t_zlist	*stck = NULL;
+	//t_zlist	*node;
 	
 	/*while (i > 0)
 	{
@@ -31,8 +32,8 @@ int main(int argc, char **argv)
 		t_zlstadd_front(&node, tmp);
 	}*/
 
-	read_arguments(argc, argv, &node);
-	
+	read_arguments(argc, argv, &stck);
+	/*node = stck;
 	while(node -> next)
 	{
 		ft_printf("%d  ", *(int *)node->content);
@@ -47,6 +48,7 @@ int main(int argc, char **argv)
 		ft_printf("%d  ", *(int *)node->content);
 		node = node -> prev;
 	}
-	ft_printf("%d  ", *(int *)node->content);
+	ft_printf("%d  ", *(int *)node->content);*/
+	t_zlstclear(&stck, free);
 	
 }

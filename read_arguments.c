@@ -10,7 +10,9 @@ void	read_1(int argc, char **argv, t_zlist **stack_a)
 	while (i > 0)
 	{
 		cont = malloc(sizeof(int));
-		*cont = ft_atoi(argv[i++]);
+		if(cont == NULL)
+			return ;
+		*cont = ft_atoi(argv[i--]);
 		tmp = t_zlstnew(cont);
 		t_zlstadd_front(stack_a, tmp);
 	}
@@ -19,20 +21,26 @@ void	read_1(int argc, char **argv, t_zlist **stack_a)
 void	read_2(char **argv, t_zlist **stack_a)
 {
 	char	**args;
-	//int	*cont;
+	int	*cont;
 	t_zlist	*tmp;
 	int	i;
+	int j;
 
 	i = 0;
+	j = 0;
 	args = ft_split(argv[1], ' ');
 	while (args[i])
 	{
-		/*cont = malloc(sizeof(int));
-		*cont = ft_atoi(argv[i++]);
-		tmp = t_zlstnew(cont);*/
-		tmp = t_zlstnew(argv[i++]);
+		cont = malloc(sizeof(int));
+		if(cont == NULL)
+			return ;
+		*cont = ft_atoi(args[i++]);
+		tmp = t_zlstnew(cont);
 		t_zlstadd_front(stack_a, tmp);
 	}
+	while(args[j])      ////tüm listeyi clelar ladıktan sonra (t_zlstclear()) tekrar aç ve kontrol et. 
+		free(args[j++]);
+	free(args);
 }
 
 
