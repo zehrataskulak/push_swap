@@ -1,6 +1,7 @@
 NAME = push_swap
 
-SRCS = push_swap.c read_arguments.c
+SRCS = push_swap.c read_arguments.c \
+z_push_functions.c
 
 OBJS = $(SRCS:.c=.o)
 

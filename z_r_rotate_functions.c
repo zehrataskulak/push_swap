@@ -1,24 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   z_r_rotate_functions.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 19:57:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/14 12:07:45 by ztaskula         ###   ########.fr       */
+/*   Created: 2025/09/14 11:13:13 by ztaskula          #+#    #+#             */
+/*   Updated: 2025/09/14 11:14:03 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-#include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "t_zlist/t_zlist.h"
-
-
-void	read_arguments(int argc, char **argv, t_zlist **stack_a);
-void	px(t_zlist **stack_take, t_zlist **stack_push);
-
-#endif
+#include "push_swap.h"

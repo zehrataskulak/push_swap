@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   t_zlstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/10 19:57:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/14 12:07:45 by ztaskula         ###   ########.fr       */
+/*   Created: 2025/09/14 11:48:56 by ztaskula          #+#    #+#             */
+/*   Updated: 2025/09/14 11:55:06 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "t_zlist.h"
 
-#include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "t_zlist/t_zlist.h"
+void	t_zlstadd_back(t_zlist **lst, t_zlist *new)
+{
+	t_zlist	*mv;
 
-
-void	read_arguments(int argc, char **argv, t_zlist **stack_a);
-void	px(t_zlist **stack_take, t_zlist **stack_push);
-
-#endif
+	mv = *lst;
+	if(new == NULL)
+		return ;
+	if(*lst == NULL)
+		*lst = new;
+	else
+	{
+		while(mv->next != NULL)
+			mv = mv->next;
+		mv->next = new;
+	}
+}

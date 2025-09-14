@@ -36,7 +36,7 @@ void	read_2(char **argv, t_zlist **stack_a)
 			return ;
 		*cont = ft_atoi(args[i++]);
 		tmp = t_zlstnew(cont);
-		t_zlstadd_front(stack_a, tmp);
+		t_zlstadd_back(stack_a, tmp);
 	}
 	while(args[j])      ////tüm listeyi clelar ladıktan sonra (t_zlstclear()) tekrar aç ve kontrol et. 
 		free(args[j++]);
