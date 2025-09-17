@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   t_zlstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 19:44:29 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/13 18:46:52 by ztaskula         ###   ########.fr       */
+/*   Updated: 2025/09/16 01:48:46 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	t_zlstclear(t_zlist **lst, void (*del)(void *))
 {
-	int	a;
 	t_zlist	*mv;
 
 	if (!lst || !del)

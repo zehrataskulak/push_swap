@@ -1,7 +1,9 @@
 NAME = push_swap
 
-SRCS = push_swap.c read_arguments.c \
-z_push_functions.c
+CFLAGS = -Wall -Wextra -Werror
+
+SRCS = push_swap.c read_arguments.c check_args.c \
+z_push_functions.c z_rotate_functions.c z_r_rotate_functions.c z_swap_functions.c
 
 OBJS = $(SRCS:.c=.o)
 
