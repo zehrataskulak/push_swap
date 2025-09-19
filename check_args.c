@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:08:08 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/17 21:09:21 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/18 18:37:51 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ void	is_dup(char **argv, int is_split)
 	{
 		i = 0;
 		argv = ft_split(argv[1], ' ');
+		if (!argv)
+			return ;
 	}
 	while(argv[i])
 	{

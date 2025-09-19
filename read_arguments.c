@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:10:30 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/17 21:10:31 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/19 13:42:12 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,18 @@ void	read_2(char **argv, t_zlist **stack_a)
 	free(args);
 }
 
-
+void	sort(t_zlist **stack_a)
+{
+	t_zlist	*tmp1;
+	
+	tmp1 = *stack_a;
+	while(tmp1)
+	{
+		tmp1->keep = 0;
+		tmp1->small = 1;
+		tmp1 = tmp1->next;
+	}
+}
 
 void	read_arguments(int argc, char **argv, t_zlist **stack_a)
 {
@@ -80,6 +91,7 @@ void	read_arguments(int argc, char **argv, t_zlist **stack_a)
 		is_dup(argv, 0);
 		read_1(argc, argv, stack_a);
 	}
+	sort(stack_a);
 	if((*stack_a) == NULL)
 		exit(0);
 }
