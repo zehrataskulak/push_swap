@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/18 20:52:06 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/19 15:01:43 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/23 16:06:15 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void    find_smaller(t_zlist *stack_a)
     {
         if(tmp1->next)
             tmp2 = tmp1->next;
+        else
+            tmp2 = tmp1;
         while(tmp2)
         {
             if(*(int *)tmp2->content > *(int *)tmp1->content)

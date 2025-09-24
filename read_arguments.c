@@ -6,12 +6,11 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:10:30 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/19 13:42:12 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/24 23:22:18 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	read_1(int argc, char **argv, t_zlist **stack_a)
 {
@@ -80,7 +79,6 @@ void	sort(t_zlist **stack_a)
 
 void	read_arguments(int argc, char **argv, t_zlist **stack_a)
 {
-
 	if(argc == 2)
 	{
 		is_dup(argv, 1);

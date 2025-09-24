@@ -1,10 +1,10 @@
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 SRCS = push_swap.c read_arguments.c check_args.c \
 z_push_functions.c z_rotate_functions.c z_r_rotate_functions.c z_swap_functions.c \
-find_lis.c send_unsorted.c
+find_lis.c find_steps.c my_algorithm.c
 
 OBJS = $(SRCS:.c=.o)
 

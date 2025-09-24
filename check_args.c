@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:08:08 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/18 18:37:51 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/23 16:01:18 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,22 +71,34 @@ void	is_dup(char **argv, int is_split)
 {
 	int i;
 	int j;
+	char **args;
 
 	i = 1;
 	if(is_split)
 	{
 		i = 0;
-		argv = ft_split(argv[1], ' ');
-		if (!argv)
+		args = ft_split(argv[1], ' ');
+		if (!args)
 			return ;
 	}
-	while(argv[i])
+	else
+		args = argv;
+	while(args[i])
 	{
 		j = i + 1;
-		while(argv[j])
+		while(args[j])
 		{
-			if(z_atoi(argv[i]) == z_atoi(argv[j]))
+			if(z_atoi(args[i]) == z_atoi(args[j]))
+			{
+				if(is_split)
+				{
+					j = 0;
+					while(args[j])     
+						free(args[j++]);
+					free(args);
+				}	
 				exit(ft_printf("Error\n"));
+			}
 			j++;
 		}
 		i++;
@@ -94,8 +106,8 @@ void	is_dup(char **argv, int is_split)
 	if(is_split)
 	{
 		j = 0;
-		while(argv[j])     
-			free(argv[j++]);
-		free(argv);
+		while(args[j])     
+			free(args[j++]);
+		free(args);
 	}
 }

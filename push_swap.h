@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 19:57:26 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/09/17 21:09:55 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/24 23:11:33 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,17 @@
 long	z_atoi(const char *str);
 void	is_range(char **args, int is_split);
 void	is_dup(char **argv, int is_split);
+void    find_steps(t_zlist **stack_a, t_zlist **stack_b);
 void	read_arguments(int argc, char **argv, t_zlist **stack_a);
+int    where_smallest(t_zlist   *stack_b);
+int    find_target(t_zlist *stack_a, t_zlist *stack_b);
+void    last_fix(t_zlist **stack_a);
+
+void    case_1(t_zlist **stack_a, t_zlist **stack_b);
+void    case_2(t_zlist **stack_a, t_zlist **stack_b);
+void    case_3(t_zlist **stack_a, t_zlist **stack_b);
+void    case_4(t_zlist **stack_a, t_zlist **stack_b);
+
 void	px(t_zlist **stack_take, t_zlist **stack_push);
 void    rx(t_zlist  **stack);
 void    rr(t_zlist  **stack_a, t_zlist **stack_b);
