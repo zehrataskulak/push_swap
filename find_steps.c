@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/19 15:08:56 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/24 23:12:46 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/09/25 15:16:09 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int    where_smallest(t_zlist   *stack_b)
         num++;
         tmp = tmp->next;
     }
-    //ft_printf("\nthis is position of smallest in b: %d\n", num);
     return (num);
 }
 
@@ -84,7 +83,6 @@ int where_biggest(t_zlist *stack_a)
         num++;
         tmp = tmp->next;
     }
-    //ft_printf("\nthis is position of biggest in a: %d\n", num);
     return (num);
 }
 
@@ -101,8 +99,6 @@ int    find_target(t_zlist *stack_a, t_zlist *stack_b)
     num = 0;
     if(!stack_a)
         return (0);
-    /*if(!stack_b)
-        return (-1);*/
     target = 0;
     tmp = stack_a;
     num = where_biggest(stack_a);
@@ -113,20 +109,7 @@ int    find_target(t_zlist *stack_a, t_zlist *stack_b)
         tmp = tmp->next;
         num--;
     }
-    //ft_printf("\n\nthis is my biggest:::%d\nthis is tmp content::%d\n\n", *(int *)biggest->content, *(int *)tmp->content);
-    
     tmp = stack_b;
-    //ft_printf("\ntmp's content: %d\n", *(int *)tmp->content);
-    //ft_printf("\n\nthis is my biggest:::%d\n\n", *(int *)biggest->content);
-    /*if(*(int *)tmp->content > *(int *)biggest->content)
-    {
-        ft_printf("\nwe're in\n");
-        num = 0;
-        num = where_biggest(stack_a) + 1;
-        ft_printf("\nnum:%d\n", num);
-        return(num);
-    }*/
-            
     if(tmp)
         num = where_smallest(tmp);
     num++;
@@ -136,77 +119,17 @@ int    find_target(t_zlist *stack_a, t_zlist *stack_b)
         tmp = tmp->next;
         num--;
     }
-    /*tmp = stack_a;
-    if(*(int *)smallest->content < *(int *)tmp->content)
-    {
-        ft_printf("\nthis is my target: %d\n", target);
-        return (target);
-    }*/
     tmp = stack_a;
-    //
-    //
-    //
-    
     while(tmp && (*(int *)smallest->content > *(int *)tmp->content))
     {   
-        /*ft_printf("\n\nthis is my biggest:%d\n", *(int *)biggest->content);
-        ft_printf("\nnum:%d\n", where_biggest(stack_a));
-        ft_printf("\ntmp' content:%d\n", *(int *)tmp->content);*/
         if(*(int *)smallest->content > *(int *)biggest->content)
-        {
-            //ft_printf("\nwe're in\n");
             return(where_biggest(stack_a) + 1);
-        }
         target++;
         tmp = tmp->next;
     }
-    //ft_printf("\nthis is my target: %d\n", target);
     return (target);
 }
 
-/*void    idk(t_zlist **stack_a, t_zlist **stack_b)
-{
-    t_zlist *tmp1;
-    t_zlist *tmp2;
-    int n;
-
-    tmp1 = *stack_b;
-    tmp2 = *stack_a;
-    n = where_smallest(*stack_b) - find_target(*stack_a, *stack_b) - 1;
-    if (n < 0)
-        n *= -1;
-
-        ///////////DOESNT WORK CORRECTLY DO IT BETTER///////////////////
-    if((where_smallest(*stack_b) <= t_zlstsize(tmp1)) && 
-            (find_target(*stack_a, *stack_b) <= t_zlstsize(tmp2)))
-    {
-        while(n)
-        {
-            rr(stack_a, stack_b);
-            ft_printf("rr\n");
-            n--;
-        }
-        px(stack_b, stack_a);
-        ft_printf("pa\n");
-    }
-    else if((where_smallest(*stack_b) > t_zlstsize(tmp1)) && 
-            (find_target(*stack_a, *stack_b) > t_zlstsize(tmp2)))
-    {
-        while(n)
-        {
-            rrr(stack_a, stack_b);
-            ft_printf("rrr\n");
-            n--;
-        }
-        px(stack_b, stack_a);
-        ft_printf("pa\n");
-    }
-    else if((where_smallest(*stack_b) <= t_zlstsize(tmp1)) && 
-            (find_target(*stack_a, *stack_b) > t_zlstsize(tmp2)))
-    {
-        
-    }
-}*/
 
 int find_targettt(t_zlist *stack_a, t_zlist *stack_b)
 {
@@ -235,6 +158,50 @@ int find_targettt(t_zlist *stack_a, t_zlist *stack_b)
 }
 
 
+int max(int a, int b)
+{
+    int max;
+
+    max = a;
+    if (b > max)
+        max = b;
+    return (max);
+}
+
+int    find_cost(int pstion_a, int pstion_b, int len_stack_a, int len_stack_b)
+{
+    int cost_case_1; 
+    int cost_case_2; 
+    int cost_case_3;
+    int cost_case_4;
+    int min;
+    int cost;
+
+    cost_case_1 = max(pstion_a, pstion_b);
+    cost_case_2 = max(len_stack_a - pstion_a, len_stack_b - pstion_b);
+    cost_case_3 = (len_stack_a - pstion_a) + pstion_b;
+    cost_case_4 = (len_stack_b - pstion_b) + pstion_a;
+    min = cost_case_1;
+    cost = 1;
+    if(cost_case_2 < min)
+    {
+        min = cost_case_2;
+        cost = 2;
+    }
+    else if(cost_case_3 < min)
+    {
+        min = cost_case_3;
+        cost = 3;
+    }  
+    else if(cost_case_4 < min)
+    {
+        min = cost_case_4;
+        cost = 4;
+    }    
+    return (cost);
+}
+
+
 
 
 void    find_steps(t_zlist **stack_a, t_zlist **stack_b)
@@ -244,9 +211,11 @@ void    find_steps(t_zlist **stack_a, t_zlist **stack_b)
     int len_stack_a;
     int len_stack_b;
 
+    
     send_unsorted(stack_a, stack_b);
     len_stack_a = t_zlstsize(*stack_a);
     len_stack_b = t_zlstsize(*stack_b);
+    
     while(len_stack_b)
     {
         pstion_a = find_target(*stack_a, *stack_b);
@@ -257,7 +226,7 @@ void    find_steps(t_zlist **stack_a, t_zlist **stack_b)
             case_2(stack_a, stack_b);
         else if((pstion_b <= len_stack_b/2) && (pstion_a > len_stack_a/2))
             case_3(stack_a, stack_b);
-        else
+        else if((pstion_b > len_stack_b/2) && (pstion_a <= len_stack_a/2))
             case_4(stack_a, stack_b);
         px(stack_b, stack_a);
         ft_printf("pa\n");
@@ -283,7 +252,7 @@ void    last_fix(t_zlist **stack_a)
         tmp = tmp->next;
     }
     num++;
-    //ft_printf("\nlast fix num:: %d\n", num);
+
     tmp = *stack_a;
     if(num > size/2)
     {
