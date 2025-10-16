@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:08:08 by zzehra            #+#    #+#             */
-/*   Updated: 2025/09/23 16:01:18 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/10/15 17:23:41 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ void	is_range(char **args, int is_split)
 					free(args[j++]);
 				free(args);
 			}
-			exit(ft_printf("Error\n"));
+			ft_printf("Error\n");
+			exit(1);
 		}
 		i++;
 	}
@@ -97,7 +98,8 @@ void	is_dup(char **argv, int is_split)
 						free(args[j++]);
 					free(args);
 				}	
-				exit(ft_printf("Error\n"));
+				ft_printf("Error\n");
+				exit(1);
 			}
 			j++;
 		}

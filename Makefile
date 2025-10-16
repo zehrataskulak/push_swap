@@ -1,10 +1,10 @@
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = push_swap.c read_arguments.c check_args.c \
 z_push_functions.c z_rotate_functions.c z_r_rotate_functions.c z_swap_functions.c \
-find_lis.c find_steps.c my_algorithm.c
+compare_bits.c less_than_six.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -15,6 +15,7 @@ all : $(LIBS) $(NAME)
 
 $(NAME): $(OBJS)
 	cc $(OBJS) $(LIBS) -o $(NAME)
+	rm -f *.o
 
 $(LIBS):
 	$(MAKE) -C libft bonus
