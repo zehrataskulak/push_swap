@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = push_swap.c read_arguments.c check_args.c \
 z_push_functions.c z_rotate_functions.c z_r_rotate_functions.c z_swap_functions.c \
-compare_bits.c less_than_six.c
+compare_bits.c less_than_six_helper.c less_than_six.c
 
 OBJS = $(SRCS:.c=.o)
 

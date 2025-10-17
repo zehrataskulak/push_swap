@@ -12,21 +12,21 @@
 
 #include "push_swap.h"
 
-void    rx(t_zlist  **stack)
+void	rx(t_zlist **stack)
 {
-    t_zlist *tmp;
-    
-    if (*stack == NULL || (*stack)->next == NULL)
-        return;
-    tmp = *stack;
-    (*stack) = (*stack)->next;
-    (*stack)->prev = NULL;
-    t_zlstadd_back(stack, tmp);
-    tmp->next = NULL;
+	t_zlist	*tmp;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return ;
+	tmp = *stack;
+	(*stack) = (*stack)->next;
+	(*stack)->prev = NULL;
+	t_zlstadd_back(stack, tmp);
+	tmp->next = NULL;
 }
 
-void    rr(t_zlist  **stack_a, t_zlist **stack_b)
+void	rr(t_zlist **stack_a, t_zlist **stack_b)
 {
-    rx(stack_a);
-    rx(stack_b);
+	rx(stack_a);
+	rx(stack_b);
 }

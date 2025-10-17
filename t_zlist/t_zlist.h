@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #ifndef T_ZLIST_H
-#define T_ZLIST_H
+# define T_ZLIST_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 typedef struct l_list
 {
@@ -24,10 +24,9 @@ typedef struct l_list
 
 }	t_zlist;
 
-
 t_zlist	*t_zlstnew(void *content);
 void	t_zlstadd_front(t_zlist **lst, t_zlist *new);
-int	t_zlstsize(t_zlist *lst);
+int		t_zlstsize(t_zlist *lst);
 t_zlist	*t_zlstlast(t_zlist *lst);
 void	t_zlstdelone(t_zlist *lst, void (*del)(void *));
 void	t_zlstclear(t_zlist **lst, void (*del)(void *));

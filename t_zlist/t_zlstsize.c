@@ -14,15 +14,15 @@
 
 int	t_zlstsize(t_zlist *lst)
 {
-	int	size;
+	int		size;
 	t_zlist	*mv;
 
 	size = 0;
 	mv = lst;
-	while(mv)
+	while (mv)
 	{
 		size++;
 		mv = mv->next;
 	}
-	return(size);
+	return (size);
 }

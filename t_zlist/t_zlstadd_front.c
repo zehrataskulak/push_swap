@@ -18,9 +18,9 @@ void	t_zlstadd_front(t_zlist **lst, t_zlist *new)
 		return ;
 	new->next = *lst;
 	if (*lst != NULL)
-    {
-        (*lst)->prev = new;
-    }
+	{
+		(*lst)->prev = new;
+	}
 	*lst = new;
 	new->prev = NULL;
 }

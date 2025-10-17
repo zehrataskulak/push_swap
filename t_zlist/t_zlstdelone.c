@@ -14,7 +14,7 @@
 
 void	t_zlstdelone(t_zlist *lst, void (*del)(void *))
 {
-	if(!lst || !del)
+	if (!lst || !del)
 		return ;
 	del(lst->content);
 	free(lst);

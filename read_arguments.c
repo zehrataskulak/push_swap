@@ -14,34 +14,33 @@
 
 void	read_1(int argc, char **argv, t_zlist **stack_a)
 {
+	int		*cont;
+	int		i;
 	t_zlist	*tmp;
-	int	*cont;
-	int i;
 
 	i = 1;
-	if(argc == 1)
+	if (argc == 1)
 		return ;
 	is_range(argv, 0);
 	while (i < argc)
 	{
 		cont = malloc(sizeof(int));
-		if(cont == NULL)
+		if (cont == NULL)
 			return ;
 		*cont = z_atoi(argv[i]);
 		tmp = t_zlstnew(cont);
 		t_zlstadd_back(stack_a, tmp);
 		i++;
 	}
-	
 }
 
 void	read_2(char **argv, t_zlist **stack_a)
 {
+	int		*cont;
+	int		i;
+	int		j;
 	char	**args;
-	int	*cont;
 	t_zlist	*tmp;
-	int	i;
-	int j;
 
 	i = 0;
 	j = 0;
@@ -52,22 +51,21 @@ void	read_2(char **argv, t_zlist **stack_a)
 	while (args[i])
 	{
 		cont = malloc(sizeof(int));
-		if(cont == NULL)
+		if (cont == NULL)
 			return ;
 		*cont = z_atoi(args[i]);
 		tmp = t_zlstnew(cont);
 		t_zlstadd_back(stack_a, tmp);
 		i++;
 	}
-	while(args[j])     
+	while (args[j])
 		free(args[j++]);
 	free(args);
 }
 
-
 void	read_arguments(int argc, char **argv, t_zlist **stack_a)
 {
-	if(argc == 2)
+	if (argc == 2)
 	{
 		is_dup(argv, 1);
 		read_2(argv, stack_a);
@@ -77,8 +75,8 @@ void	read_arguments(int argc, char **argv, t_zlist **stack_a)
 		is_dup(argv, 0);
 		read_1(argc, argv, stack_a);
 	}
-	if((*stack_a) == NULL)
+	if ((*stack_a) == NULL)
 		exit(0);
-	if(t_zlstsize(*stack_a) == 1)
+	if (t_zlstsize(*stack_a) == 1)
 		exit(0);
 }

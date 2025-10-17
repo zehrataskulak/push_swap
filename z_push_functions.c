@@ -20,7 +20,7 @@ void	px(t_zlist **stack_take, t_zlist **stack_push)
 		return ;
 	tmp = *stack_take;
 	*stack_take = (*stack_take)->next;
-	if(*stack_take)
+	if (*stack_take)
 		(*stack_take)->prev = NULL;
 	tmp->next = NULL;
 	tmp->prev = NULL;

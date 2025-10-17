@@ -17,7 +17,7 @@ t_zlist	*t_zlstnew(void *content)
 	t_zlist	*newnode;
 
 	newnode = malloc(sizeof(t_zlist));
-	if(newnode == NULL)
+	if (newnode == NULL)
 		return (NULL);
 	newnode -> content = content;
 	newnode -> next = NULL;

@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 21:08:08 by zzehra            #+#    #+#             */
-/*   Updated: 2025/10/15 17:23:41 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/10/16 23:22:50 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 long	z_atoi(const char *str)
 {
 	long	num;
-	int	sign;
-	int	i;
+	int		sign;
+	int		i;
 
 	num = 0;
 	sign = 1;
@@ -34,35 +34,61 @@ long	z_atoi(const char *str)
 		num = num * 10 + (str[i] - '0');
 		i++;
 	}
-	if(!str[i] || str[i] == 32 || str[i] == 9 || str[i] == 10)
+	if (!str[i] || str[i] == 32 || str[i] == 9 || str[i] == 10)
 		return (num * sign);
 	else
-		return(0);
+		return (0);
 }
 
 void	is_range(char **args, int is_split)
 {
-	int i;
-	int j;
-	long num;
+	long	num;
+	int		i;
+	int		j;
 
 	j = 0;
 	i = 0;
-	if(!is_split)
+	if (!is_split)
 		i = 1;
-	while(args[i])
+	while (args[i])
 	{
 		num = z_atoi(args[i]);
-		if(num > 2147483647 || num < -2147483648  || (num == 0 && args[i][0] != '0'))
+		if (num > 2147483647 || num < -2147483648
+			|| (num == 0 && args[i][0] != '0'))
 		{
-			if(is_split)
+			if (is_split)
 			{
-				while(args[j])     
+				while (args[j])
 					free(args[j++]);
 				free(args);
 			}
 			ft_printf("Error\n");
-			exit(1);
+			exit (1);
+		}
+		i++;
+	}
+}
+
+void	is_dup_0(char **args, int is_split, int i, int j)
+{
+	while (args[i])
+	{
+		j = i + 1;
+		while (args[j])
+		{
+			if (z_atoi(args[i]) == z_atoi(args[j]))
+			{
+				if (is_split)
+				{
+					j = 0;
+					while (args[j])
+						free(args[j++]);
+					free(args);
+				}
+				ft_printf("Error\n");
+				exit (1);
+			}
+			j++;
 		}
 		i++;
 	}
@@ -70,12 +96,13 @@ void	is_range(char **args, int is_split)
 
 void	is_dup(char **argv, int is_split)
 {
-	int i;
-	int j;
-	char **args;
+	int		i;
+	int		j;
+	char	**args;
 
 	i = 1;
-	if(is_split)
+	j = 0;
+	if (is_split)
 	{
 		i = 0;
 		args = ft_split(argv[1], ' ');
@@ -84,31 +111,11 @@ void	is_dup(char **argv, int is_split)
 	}
 	else
 		args = argv;
-	while(args[i])
-	{
-		j = i + 1;
-		while(args[j])
-		{
-			if(z_atoi(args[i]) == z_atoi(args[j]))
-			{
-				if(is_split)
-				{
-					j = 0;
-					while(args[j])     
-						free(args[j++]);
-					free(args);
-				}	
-				ft_printf("Error\n");
-				exit(1);
-			}
-			j++;
-		}
-		i++;
-	}
-	if(is_split)
+	is_dup_0(args, is_split, i, j);
+	if (is_split)
 	{
 		j = 0;
-		while(args[j])     
+		while (args[j])
 			free(args[j++]);
 		free(args);
 	}

@@ -14,11 +14,11 @@
 
 t_zlist	*t_zlstlast(t_zlist *lst)
 {
-	if(!lst)
+	if (!lst)
 		return (NULL);
 	while (lst->next != NULL)
-    {
-        lst = lst->next;
-    }
+	{
+		lst = lst->next;
+	}
 	return (lst);
 }

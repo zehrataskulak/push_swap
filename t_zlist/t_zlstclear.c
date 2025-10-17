@@ -18,7 +18,7 @@ void	t_zlstclear(t_zlist **lst, void (*del)(void *))
 
 	if (!lst || !del)
 		return ;
-	while(*lst)
+	while (*lst)
 	{
 		mv = (*lst)->next;
 		t_zlstdelone(*lst, del);

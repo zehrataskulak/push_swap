@@ -15,11 +15,11 @@
 void	t_zlstadd_back(t_zlist **lst, t_zlist *new)
 {
 	t_zlist	*tmp;
-	
-	if(new == NULL)
+
+	if (new == NULL)
 		return ;
 	new->next = NULL;
-	if(*lst == NULL)
+	if (*lst == NULL)
 		*lst = new;
 	else
 	{
