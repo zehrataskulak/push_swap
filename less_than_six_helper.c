@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:59:02 by zzehra            #+#    #+#             */
-/*   Updated: 2025/10/16 23:40:38 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/10/22 12:34:58 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	size_2(t_zlist **stack, char c)
 
 void	size_3_0(t_zlist **stack_a)
 {
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
 	if (((*stack_a)->indx == 0) && ((*stack_a)->next->indx == 2))
 	{
 		rx(stack_a);
@@ -69,16 +71,14 @@ void	size_3(t_zlist **stack_a, int cs)
 	{
 		rx(stack_a);
 		ft_printf("ra\n");
-		if ((*stack_a)->indx == 1)
+		if ((*stack_a) && (*stack_a)->indx == 1)
 		{
 			sx(stack_a);
 			ft_printf("sa\n");
 		}
 	}
 	else
-	{
 		size_3_0(stack_a);
-	}
 }
 
 void	size_other_0(t_zlist **stack_a, t_zlist **stack_b)

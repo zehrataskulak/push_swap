@@ -6,7 +6,7 @@
 /*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 20:12:30 by ztaskula          #+#    #+#             */
-/*   Updated: 2025/10/16 22:18:04 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/10/22 12:22:42 by zzehra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ int	main(int argc, char **argv)
 		compare_bits(&stack_a, &stack_b);
 	t_zlstclear(&stack_a, free);
 	t_zlstclear(&stack_b, free);
+	return (0);
 }
