@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   less_than_six_helper.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zzehra <zzehra@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ztaskula <ztaskula@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:59:02 by zzehra            #+#    #+#             */
-/*   Updated: 2025/10/22 12:34:58 by zzehra           ###   ########.fr       */
+/*   Updated: 2025/12/01 14:48:16 by ztaskula         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	size_3(t_zlist **stack_a, int cs)
 			tmp = tmp->next;
 		}
 	}
-	if (((*stack_a)->indx == 2))
+	if ((*stack_a)->indx == 2)
 	{
 		rx(stack_a);
 		ft_printf("ra\n");
